@@ -151,7 +151,7 @@
                                 <colorTriggerFgColor>#000000</colorTriggerFgColor>
                                 <colorTriggerBgColor>#000000</colorTriggerBgColor>
                                 <regexCodeList>
-                                    <string>[ CHILL ]:</string>
+                                    <string>[ CHILL ]</string>
                                 </regexCodeList>
                                 <regexCodePropertyList>
                                     <integer>2</integer>
