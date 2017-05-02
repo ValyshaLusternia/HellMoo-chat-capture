@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.000">
+    <AliasPackage>
+        <AliasGroup isActive="yes" isFolder="yes">
+            <name>ChatCaptureAlias</name>
+            <script></script>
+            <command></command>
+            <packageName>ChatCaptureAlias</packageName>
+            <regex></regex>
+            <AliasGroup isActive="yes" isFolder="yes">
+                <name>Demonnic</name>
+                <script></script>
+                <command></command>
+                <packageName>Demonnic</packageName>
+                <regex></regex>
+                <AliasGroup isActive="yes" isFolder="yes">
+                    <name>YATCO</name>
+                    <script></script>
+                    <command></command>
+                    <packageName>YATCO-23 (1)</packageName>
+                    <regex></regex>
+                    <AliasGroup isActive="yes" isFolder="yes">
+                        <name>Demonnic</name>
+                        <script></script>
+                        <command></command>
+                        <packageName></packageName>
+                        <regex></regex>
+                        <AliasGroup isActive="yes" isFolder="yes">
+                            <name>Shared</name>
+                            <script></script>
+                            <command></command>
+                            <packageName></packageName>
+                            <regex></regex>
+                            <Alias isActive="yes" isFolder="no">
+                                <name>Reset chasing</name>
+                                <script>demonnic.chaser:reset()</script>
+                                <command></command>
+                                <packageName></packageName>
+                                <regex>^chaseres$</regex>
+                            </Alias>
+                            <Alias isActive="yes" isFolder="no">
+                                <name>Debug</name>
+                                <script>if matches[2] then
+  demonnic:listCategories()
+else
+  demonnic:toggleDebug()
+end</script>
+                                <command></command>
+                                <packageName></packageName>
+                                <regex>^debug(?: (list))?$</regex>
+                            </Alias>
+                            <Alias isActive="yes" isFolder="no">
+                                <name>debug categories</name>
+                                <script>if matches[2] then
+  demonnic:watchCategory( matches[2] )
+else
+  demonnic:listCategories()
+end</script>
+                                <command></command>
+                                <packageName></packageName>
+                                <regex>^debugc(?: (.*))?$</regex>
+                            </Alias>
+                        </AliasGroup>
+                        <AliasGroup isActive="yes" isFolder="yes">
+                            <name>Tabbed Chat</name>
+                            <script></script>
+                            <command></command>
+                            <packageName></packageName>
+                            <regex></regex>
+                            <Alias isActive="yes" isFolder="no">
+                                <name>Toggle blinking (temporary change)</name>
+                                <script>if demonnic.chat.config.blink then
+  demonnic.chat.config.blink = false
+  demonnic.chat.tabsToBlink = {}
+  demonnic:echo(&quot;Blinking temporarily turned &lt;red&gt;off&lt;grey&gt;. It will reset if you edit your tabbed chat configuration, or close and reopen mudlet. To make it permanent, change demonnic.chat.config.blink to false in \&quot;Demonnic-&gt;Tabbed Chat-&gt;Configuration options\&quot; under scripts\n&quot;)
+else
+  demonnic.chat.config.blink = true
+  demonnic.chat:blink()
+  demonnic:echo(&quot;Blinking temporarily turned &lt;red&gt;on&lt;grey&gt;. It will reset if you edit your tabbed chat configuration, or close and reopen mudlet. To make it permanent, change demonnic.chat.config.blink to true in \&quot;Demonnic-&gt;Tabbed Chat-&gt;Configuration options\&quot; under scripts\n&quot;)
+end</script>
+                                <command></command>
+                                <packageName></packageName>
+                                <regex>^dblink$</regex>
+                            </Alias>
+                            <Alias isActive="yes" isFolder="no">
+                                <name>fixChat</name>
+                                <script>local currentsetting = demonnic.chat.config.location
+local newsetting = &quot;&quot;
+if currentsetting == &quot;topright&quot; then 
+  newsetting = &quot;bottomleft&quot; 
+elseif currentsetting == &quot;topleft&quot; then
+  newsetting = &quot;bottomright&quot;
+elseif currentsetting == &quot;bottomleft&quot; then
+  newsetting = &quot;topright&quot;
+elseif currentsetting == &quot;bottomright&quot; then
+  newsetting = &quot;topleft&quot;
+end
+
+demonnic.chat.config.location = newsetting
+demonnic.chat:create()
+demonnic.chat.config.location = currentsetting
+demonnic.chat:create()</script>
+                                <command></command>
+                                <packageName></packageName>
+                                <regex>^fixchat$</regex>
+                            </Alias>
+                        </AliasGroup>
+                    </AliasGroup>
+                </AliasGroup>
+            </AliasGroup>
+        </AliasGroup>
+    </AliasPackage>
+</MudletPackage>
