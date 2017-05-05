@@ -77,9 +77,10 @@
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList/>
                             <regexCodePropertyList/>
-                            <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-                                <name>Coalition Channel Capture</name>
-                                <script>demonnic.chat:append(&quot;Clans&quot;)</script>
+                            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                                <name>Camera Channel Capture</name>
+                                <script>demonnic.chat:append(&quot;Cam&quot;)
+deleteFull()</script>
                                 <triggerType>0</triggerType>
                                 <conditonLineDelta>39</conditonLineDelta>
                                 <mStayOpen>0</mStayOpen>
@@ -91,10 +92,10 @@
                                 <colorTriggerFgColor>#000000</colorTriggerFgColor>
                                 <colorTriggerBgColor>#000000</colorTriggerBgColor>
                                 <regexCodeList>
-                                    <string>(Celidon):</string>
+                                    <string>On your wristpad radio:</string>
                                 </regexCodeList>
                                 <regexCodePropertyList>
-                                    <integer>0</integer>
+                                    <integer>2</integer>
                                 </regexCodePropertyList>
                             </Trigger>
                             <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
